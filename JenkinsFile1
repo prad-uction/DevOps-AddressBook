@@ -1,8 +1,5 @@
 changesdonepipeline{
-    tools{
-        jdk 'myjava'
-        maven 'mymaven131'
-    }
+    
     agent any
     stages{
         stage('Checkout on git'){
