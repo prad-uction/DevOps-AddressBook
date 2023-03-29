@@ -10,12 +10,12 @@ pipeline {
     stages {
         stage ('Checkout') {
             steps {
-                gv.buildApp()
-            }
-/*            steps {
                 git 'https://github.com/kotagiriramachandra/DevOpsClassCodes.git'
             }
-            post {
+
+            gv.buildApp()
+            
+/*            post {
                 success {
                     echo 'Build is successful'
                 }
