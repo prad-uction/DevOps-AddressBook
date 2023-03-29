@@ -8,11 +8,18 @@ pipeline {
         booleanParam (name:'executeTests', defaultValue: false, description: '' )
     }
     stages {
-        stage ('Checkout') {
+        stage ('init') {
             steps {
-                git 'https://github.com/kotagiriramachandra/DevOpsClassCodes.git'
-                gv.buildApp()
+                script {
+                    gv = load "script.groovy"
+                }
             }
+        }
+        stage ('Checkout') {
+/*            steps {
+                git 'https://github.com/kotagiriramachandra/DevOpsClassCodes.git'
+            }*/
+            gv.buildApp()
 /*            post {
                 success {
                     echo 'Build is successful'
