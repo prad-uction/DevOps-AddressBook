@@ -9,6 +9,9 @@ pipeline {
     }
     stages {
         stage ('Checkout') {
+            steps {
+                gv.buildApp()
+            }
 /*            steps {
                 git 'https://github.com/kotagiriramachandra/DevOpsClassCodes.git'
             }
@@ -20,9 +23,11 @@ pipeline {
                     echo 'Build failed'
                 }
             }*/
-            gv.buildApp()
         }
         stage ('Compile') {
+            steps {
+                gv.compileApp()
+            }
 /*            steps {
                 bat 'mvn compile'
             }
@@ -34,9 +39,11 @@ pipeline {
                     echo 'Code compilation failed'
                 }
             }*/
-            gv.compileApp()
         }
         stage ('Test') {
+            steps {
+                gv.testApp()
+            }
 /*            steps {
                 bat 'mvn test'
             }            
@@ -48,9 +55,11 @@ pipeline {
                     echo 'Testing failed'
                 }
             }*/
-            gv.testApp()
         }
         stage ('Quality') {
+            steps {
+                gv.qaApp()
+            }
 /*            when {
                 expression {
                     params.executeTests
@@ -67,9 +76,11 @@ pipeline {
                     echo 'QA failed'
                 }
             }*/
-            gv.qaApp()
         }
         stage ('Package') {
+            steps {
+                gv.pkgApp()
+            }
 /*            steps {
                 bat 'mvn package'
             }
@@ -81,7 +92,6 @@ pipeline {
                     echo 'Package failed'
                 }
             }*/
-            gv.pkgApp()
         }
     }
     
