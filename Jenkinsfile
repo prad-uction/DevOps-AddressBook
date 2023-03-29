@@ -16,10 +16,10 @@ pipeline {
             }
         }
         stage ('Checkout') {
-/*            steps {
+            steps {
                 git 'https://github.com/kotagiriramachandra/DevOpsClassCodes.git'
-            }*/
-            gv.buildApp()
+                gv.buildApp()
+            }
 /*            post {
                 success {
                     echo 'Build is successful'
