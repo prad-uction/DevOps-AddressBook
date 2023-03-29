@@ -1,3 +1,4 @@
+def gv 
 pipeline {
     agent { label 'windows' }
     tools {
@@ -8,7 +9,7 @@ pipeline {
     }
     stages {
         stage ('Checkout') {
-            steps {
+/*            steps {
                 git 'https://github.com/kotagiriramachandra/DevOpsClassCodes.git'
             }
             post {
@@ -18,10 +19,11 @@ pipeline {
                 failure {
                     echo 'Build failed'
                 }
-            }
+            }*/
+            gv.buildApp()
         }
         stage ('Compile') {
-            steps {
+/*            steps {
                 bat 'mvn compile'
             }
             post {
@@ -31,10 +33,11 @@ pipeline {
                 failure {
                     echo 'Code compilation failed'
                 }
-            }
+            }*/
+            gv.compileApp()
         }
         stage ('Test') {
-            steps {
+/*            steps {
                 bat 'mvn test'
             }            
             post {
@@ -44,7 +47,8 @@ pipeline {
                 failure {
                     echo 'Testing failed'
                 }
-            }
+            }*/
+            gv.testApp()
         }
         stage ('Quality') {
 /*            when {
@@ -52,7 +56,7 @@ pipeline {
                     params.executeTests
                 }
             } */
-            steps {
+/*            steps {
                 bat 'mvn pmd:pmd'
             }
             post {
@@ -62,10 +66,11 @@ pipeline {
                 failure {
                     echo 'QA failed'
                 }
-            }
+            }*/
+            gv.qaApp()
         }
         stage ('Package') {
-            steps {
+/*            steps {
                 bat 'mvn package'
             }
             post {
@@ -75,7 +80,8 @@ pipeline {
                 failure {
                     echo 'Package failed'
                 }
-            }
+            }*/
+            gv.pkgApp()
         }
     }
     
