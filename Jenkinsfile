@@ -15,7 +15,7 @@ pipeline {
                 success {
                     echo 'Build is successful'
                 }
-                Failure {
+                failure {
                     echo 'Build failed'
                 }
             }
@@ -28,7 +28,7 @@ pipeline {
                 success {
                     echo 'Code compile is successful'
                 }
-                Failure {
+                failure {
                     echo 'Code compilation failed'
                 }
             }
@@ -41,7 +41,7 @@ pipeline {
                 success {
                     echo 'Testing is successful'
                 }
-                Failure {
+                failure {
                     echo 'Testing failed'
                 }
             }
@@ -59,7 +59,7 @@ pipeline {
                 success {
                     echo 'QA is successful'
                 }
-                Failure {
+                failure {
                     echo 'QA failed'
                 }
             }
@@ -72,7 +72,7 @@ pipeline {
                 success {
                     echo 'Package is successful'
                 }
-                Failure {
+                failure {
                     echo 'Package failed'
                 }
             }
