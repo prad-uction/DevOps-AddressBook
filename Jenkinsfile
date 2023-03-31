@@ -53,7 +53,12 @@ pipeline {
 /*                script {
                     gv.testApp()
                 } */
-            }            
+            }
+            steps {
+                 script {
+                    gv.testApp()
+                } 
+            }
 /*            post {
                 success {
                     echo 'Testing is successful'
