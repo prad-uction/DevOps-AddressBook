@@ -34,9 +34,9 @@ pipeline {
         stage ('Compile') {
             steps {
                 bat 'mvn compile'
-                script {
+/*                script {
                     gv.compileApp()
-                }    
+                } */    
             }
 /*            post {
                 success {
@@ -50,9 +50,9 @@ pipeline {
         stage ('Test') {
             steps {
                 bat 'mvn test'
-                script {
+/*                script {
                     gv.testApp()
-                }
+                } */
             }            
 /*            post {
                 success {
@@ -71,9 +71,9 @@ pipeline {
             } */
             steps {
                 bat 'mvn pmd:pmd'
-                script {
+/*                script {
                     gv.qaApp()
-                }
+                } */
             }
 /*            post {
                 success {
@@ -87,9 +87,9 @@ pipeline {
         stage ('Package') {
             steps {
                 bat 'mvn package'
-                script {
+/*                script {
                     gv.pkgApp()
-                }
+                } */
             }
 /*            post {
                 success {
