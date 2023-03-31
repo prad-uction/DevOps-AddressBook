@@ -17,8 +17,9 @@ pipeline {
         }
         stage ('Checkout') {
             steps {
-                git 'https://github.com/kotagiriramachandra/DevOpsClassCodes.git'
-                gv.buildApp()
+                script {
+                    gv.buildApp()
+                }
             }
 /*            post {
                 success {
@@ -32,6 +33,9 @@ pipeline {
         stage ('Compile') {
             steps {
                 bat 'mvn compile'
+                script {
+                    gv.compileApp()
+                }    
             }
 /*            post {
                 success {
@@ -45,6 +49,9 @@ pipeline {
         stage ('Test') {
             steps {
                 bat 'mvn test'
+                script {
+                    gv.testApp()
+                }
             }            
 /*            post {
                 success {
@@ -63,6 +70,9 @@ pipeline {
             } */
             steps {
                 bat 'mvn pmd:pmd'
+                script {
+                    gv.qaApp()
+                }
             }
 /*            post {
                 success {
@@ -76,6 +86,9 @@ pipeline {
         stage ('Package') {
             steps {
                 bat 'mvn package'
+                script {
+                    gv.pkgApp()
+                }
             }
 /*            post {
                 success {
