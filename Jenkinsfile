@@ -17,6 +17,7 @@ pipeline {
         }
         stage ('Checkout') {
             steps {
+                git 'https://github.com/kotagiriramachandra/DevOpsClassCodes.git'
                 script {
                     gv.buildApp()
                 }
