@@ -1,6 +1,6 @@
 def buildApp() {
             
-            git 'https://github.com/kotagiriramachandra/DevOpsClassCodes.git'
+/*            git 'https://github.com/kotagiriramachandra/DevOpsClassCodes.git' */
             
             post {
                 success {
