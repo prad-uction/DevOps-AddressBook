@@ -17,10 +17,10 @@ pipeline {
         }
         stage ('Checkout') {
             steps {
-                git 'https://github.com/kotagiriramachandra/DevOpsClassCodes.git'
-/*                script {
+/*                git 'https://github.com/kotagiriramachandra/DevOpsClassCodes.git'*/
+                script {
                     gv.buildApp()
-                } */
+                }
             }
 /*            post {
                 success {
@@ -33,10 +33,10 @@ pipeline {
         }
         stage ('Compile') {
             steps {
-                bat 'mvn compile'
-/*                script {
+/*                bat 'mvn compile' */
+                script {
                     gv.compileApp()
-                } */    
+                }     
             }
 /*            post {
                 success {
@@ -49,13 +49,8 @@ pipeline {
         }
         stage ('Test') {
             steps {
-                bat 'mvn test'
-/*                script {
-                    gv.testApp()
-                } */
-            }
-            steps {
-                 script {
+/*                bat 'mvn test' */
+                script {
                     gv.testApp()
                 } 
             }
@@ -75,10 +70,10 @@ pipeline {
                 }
             } */
             steps {
-                bat 'mvn pmd:pmd'
-/*                script {
+/*                bat 'mvn pmd:pmd' */
+                script {
                     gv.qaApp()
-                } */
+                } 
             }
 /*            post {
                 success {
@@ -91,10 +86,10 @@ pipeline {
         }
         stage ('Package') {
             steps {
-                bat 'mvn package'
-/*                script {
+/*                bat 'mvn package' */
+                script {
                     gv.pkgApp()
-                } */
+                } 
             }
 /*            post {
                 success {
