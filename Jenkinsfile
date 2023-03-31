@@ -18,6 +18,7 @@ pipeline {
         stage ('Checkout') {
             steps {
 /*                git 'https://github.com/kotagiriramachandra/DevOpsClassCodes.git'*/
+                echo 'Before using function from script'
                 script {
                     gv.buildApp()
                 }
