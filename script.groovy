@@ -1,7 +1,7 @@
 def buildApp() {
             
 /*            git 'https://github.com/kotagiriramachandra/DevOpsClassCodes.git' */
-            
+            echo 'Inside the script'
             post {
                 success {
                     echo 'Build is successful'
