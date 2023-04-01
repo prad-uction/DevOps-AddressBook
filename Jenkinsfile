@@ -1,4 +1,4 @@
-def gv 
+def GV 
 pipeline {
     agent { label 'windows' }
     tools {
@@ -11,7 +11,7 @@ pipeline {
         stage ('init') {
             steps {
                 script {
-                    gv = load "script.groovy"
+                    GV = load "script.groovy"
                 }
             }
         }
@@ -20,7 +20,7 @@ pipeline {
 /*                git 'https://github.com/kotagiriramachandra/DevOpsClassCodes.git'*/
                 echo 'Before using function from script'
                 script {
-                    gv.buildApp()
+                    GV.buildApp()
                 }
             }
 /*            post {
@@ -36,7 +36,7 @@ pipeline {
             steps {
 /*                bat 'mvn compile' */
                 script {
-                    gv.compileApp()
+                    GV.compileApp()
                 }     
             }
 /*            post {
@@ -52,7 +52,7 @@ pipeline {
             steps {
 /*                bat 'mvn test' */
                 script {
-                    gv.testApp()
+                    GV.testApp()
                 } 
             }
 /*            post {
@@ -73,7 +73,7 @@ pipeline {
             steps {
 /*                bat 'mvn pmd:pmd' */
                 script {
-                    gv.qaApp()
+                    GV.qaApp()
                 } 
             }
 /*            post {
@@ -89,7 +89,7 @@ pipeline {
             steps {
 /*                bat 'mvn package' */
                 script {
-                    gv.pkgApp()
+                    GV.pkgApp()
                 } 
             }
 /*            post {
