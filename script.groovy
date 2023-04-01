@@ -1,15 +1,16 @@
 def buildApp() {
             
-/*            git 'https://github.com/kotagiriramachandra/DevOpsClassCodes.git' */
             echo 'Inside the script'
-            post {
+            git 'https://github.com/kotagiriramachandra/DevOpsClassCodes.git' 
+            echo 'After fetch'
+/*            post {
                 success {
                     echo 'Build is successful'
                 }
                 failure {
                     echo 'Build failed'
                 }
-            }
+            }*/
 }
 def compileApp() {
             post {
