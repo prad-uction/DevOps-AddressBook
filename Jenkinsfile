@@ -1,4 +1,4 @@
-Def gv 
+def gv 
 pipeline {
     agent { label 'windows' }
     tools {
