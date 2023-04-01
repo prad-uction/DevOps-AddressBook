@@ -18,52 +18,49 @@ pipeline {
         }
         stage ('Checkout') {
             steps {
-/*                git 'https://github.com/kotagiriramachandra/DevOpsClassCodes.git'*/
                 echo 'Before using function from script'
                 script {
                     GV.buildApp()
                 }
             }
-/*            post {
+            post {
                 success {
                     echo 'Build is successful'
                 }
                 failure {
                     echo 'Build failed'
                 }
-            }*/
+            }
         }
         stage ('Compile') {
             steps {
-/*                bat 'mvn compile' */
                 script {
                     GV.compileApp()
                 }     
             }
-/*            post {
+            post {
                 success {
                     echo 'Code compile is successful'
                 }
                 failure {
                     echo 'Code compilation failed'
                 }
-            }*/
+            }
         }
         stage ('Test') {
             steps {
-/*                bat 'mvn test' */
                 script {
                     GV.testApp()
                 } 
             }
-/*            post {
+            post {
                 success {
                     echo 'Testing is successful'
                 }
                 failure {
                     echo 'Testing failed'
                 }
-            }*/
+            }
         }
         stage ('Quality') {
 /*            when {
@@ -72,35 +69,33 @@ pipeline {
                 }
             } */
             steps {
-/*                bat 'mvn pmd:pmd' */
                 script {
                     GV.qaApp()
                 } 
             }
-/*            post {
+            post {
                 success {
                     echo 'QA is successful'
                 }
                 failure {
                     echo 'QA failed'
                 }
-            }*/
+            }
         }
         stage ('Package') {
             steps {
-/*                bat 'mvn package' */
                 script {
                     GV.pkgApp()
                 } 
             }
-/*            post {
+            post {
                 success {
                     echo 'Package is successful'
                 }
                 failure {
                     echo 'Package failed'
                 }
-            }*/
+            }
         }
     }
     
