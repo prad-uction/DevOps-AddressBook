@@ -110,6 +110,7 @@ pipeline {
                 failure {
                     echo 'Docker Image built failed'
                 }
+            }  
         }
     }
     
