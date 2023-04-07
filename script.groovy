@@ -6,7 +6,7 @@ def buildApp() {
 }
 
 def compileApp() {
-            bat 'mvn compile'
+            bat 'mvn clean compile'
 }
 
 def testApp() {
