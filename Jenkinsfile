@@ -97,6 +97,20 @@ pipeline {
                 }
             }
         }
+        stage ('Docker Image') {
+            steps{
+                script {
+                    sh 'docker build -t addressbook:V1.0 .'
+                }
+            }
+            post {
+                success {
+                    echo 'Docker Image is built successfully'
+                }
+                failure {
+                    echo 'Docker Image built failed'
+                }
+        }
     }
     
     post {
