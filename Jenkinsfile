@@ -127,16 +127,47 @@ pipeline {
                 }
             }  
         }
+        stage ('Docker build & tag') {
+            steps{
+                script {
+                    bat 'docker build -t addbk_ecr_ap_ne_1 .'
+                    bat 'docker tag addbk_ecr_ap_ne_1:V1.0 791930564431.dkr.ecr.ap-northeast-1.amazonaws.com/addbk_ecr_ap_ne_1:V1.0'
+                }
+            }
+            post {
+                success {
+                    echo 'Docker build and tag successfully'
+                }
+                failure {
+                    echo 'Docker build and tag failed'
+                }
+            }  
+        }
+        stage ('Docker push to AWS') {
+            steps{
+                script {
+                    bat 'docker push 791930564431.dkr.ecr.ap-northeast-1.amazonaws.com/addbk_ecr_ap_ne_1:V1.0'
+                }
+            }
+            post {
+                success {
+                    echo 'Docker push to AWS successfully'
+                }
+                failure {
+                    echo 'Docker push to AWS failed'
+                }
+            }  
+        }
     }
     
     post {
         
         always {
-            echo 'build process initiated and'
+            echo 'Build process initiated and'
         }
         
         success {
-            echo 'build process conpleted successfully'
+            echo 'build process completed successfully'
         }
         
         failure {
