@@ -130,7 +130,7 @@ pipeline {
         stage ('Docker tag') {
             steps{
                 script {
-                    bat 'docker tag addressbook:V1.0 791930564431.dkr.ecr.ap-northeast-1.amazonaws.com/addressbook:V1.0'
+                    bat 'docker tag addressbook:V1.0 791930564431.dkr.ecr.ap-northeast-1.amazonaws.com/addbk_ecr_ap_ne_1:V1.0'
                 }
             }
             post {
@@ -145,7 +145,7 @@ pipeline {
         stage ('Docker push to AWS') {
             steps{
                 script {
-                    bat 'docker push 791930564431.dkr.ecr.ap-northeast-1.amazonaws.com/addressbook:V1.0'
+                    bat 'docker push 791930564431.dkr.ecr.ap-northeast-1.amazonaws.com/addbk_ecr_ap_ne_1:V1.0'
                 }
             }
             post {
