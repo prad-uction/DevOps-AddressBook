@@ -100,7 +100,7 @@ pipeline {
         stage ('Docker Image') {
             steps{
                 script {
-                    sh 'docker build -t addressbook:V1.0 .'
+                    bat 'docker build -t addressbook:V1.0 .'
                 }
             }
             post {
