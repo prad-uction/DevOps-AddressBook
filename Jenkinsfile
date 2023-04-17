@@ -112,7 +112,7 @@ pipeline {
                 }
             }  
         }
-        stage ('Docker Connect to AWS') {
+/*        stage ('Docker Connect to AWS') {
             steps{
                 script {
                     bat 'aws ecr get-login-password --region ap-northeast-1 | docker login --username AWS --password-stdin 791930564431.dkr.ecr.ap-northeast-1.amazonaws.com'
@@ -156,7 +156,7 @@ pipeline {
                     echo 'Docker push to AWS failed'
                 }
             }  
-        }
+        } */
     }
     
     post {
