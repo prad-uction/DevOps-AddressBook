@@ -1,7 +1,8 @@
 def GV 
 
 pipeline {
-    agent { label 'windows' }
+    agent any
+/*    agent { label 'windows' } */
     tools {
         maven 'M2_HOME'
     }
