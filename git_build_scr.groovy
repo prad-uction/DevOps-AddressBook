@@ -1,11 +1,13 @@
 def buildApp() {
-            checkout scmGit(branches: [[name: "*/${BRANCH-NM}"]], extensions: [], userRemoteConfigs: [[credentialsId: 'git-cred', name: 'origin', url: 'https://github.com/kotagiriramachandra/DevOpsClassCodes.git']]) 
-            echo "Git pull from ${BRANCH-NM}"
+            echo 'Before'
+	checkout scmGit(branches: [[name: "*/${BRANCH-NM}"]], extensions: [], userRemoteConfigs: [[credentialsId: 'git-cred', name: 'origin', url: 'https://github.com/kotagiriramachandra/DevOpsClassCodes.git']]) 
+            echo 'After'
+	echo "Git pull from ${BRANCH-NM}"
 }
 
 def compileApp() {
             bat 'mvn clean compile'
-			echo 'clean compile done'
+	    echo 'clean compile done'
 }
 
 def testApp() {
@@ -18,7 +20,7 @@ def qaApp() {
 
 def pkgApp() {
                 bat 'mvn package'
-				echo 'build done'
+		echo 'build done'
 }
 
 return this
