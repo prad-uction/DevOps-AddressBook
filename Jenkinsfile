@@ -6,7 +6,7 @@ pipeline {
         maven 'M2_HOME'
     }
     parameters {
-        string defaultValue: 'develop', description: 'Source Branch', name: 'BRANCG-NM'
+        string defaultValue: 'develop', description: 'Source Branch', name: 'BRANCH-NM'
     }
     stages {
         stage ('init') {
