@@ -1,8 +1,8 @@
 def buildApp() {
             echo 'Before'
-	checkout scmGit(branches: [[name: "*/${BRANCH-NM}"]], extensions: [], userRemoteConfigs: [[credentialsId: 'git-cred', name: 'origin', url: 'https://github.com/kotagiriramachandra/DevOpsClassCodes.git']]) 
+	    git branch: "${BRANCH-NM}", credentialsId: 'git-cred', name: 'origin', url: 'https://github.com/kotagiriramachandra/DevOpsClassCodes.git'
             echo 'After'
-	echo "Git pull from ${BRANCH-NM}"
+	    echo "Git pull from ${BRANCH-NM}"
 }
 
 def compileApp() {
