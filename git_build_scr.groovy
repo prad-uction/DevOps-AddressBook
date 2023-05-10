@@ -1,6 +1,6 @@
 def buildApp() {
             echo 'Before'
-	    git branch: '${BRANCH-NM}', credentialsId: 'git-cred', url: 'https://github.com/kotagiriramachandra/DevOpsClassCodes.git'
+	    git branch: "${BRANCH-NM}", credentialsId: 'git-cred', url: 'https://github.com/kotagiriramachandra/DevOpsClassCodes.git'
             echo 'After'
 	    echo "Git pull from ${BRANCH-NM}"
 }
