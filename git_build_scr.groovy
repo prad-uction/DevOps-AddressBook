@@ -1,5 +1,5 @@
 def buildApp() {
-            checkout scmGit(branches: [[name: "*/${BRANCH-NM}"]], extensions: [], userRemoteConfigs: [[credentialsId: 'git-cred', name: 'origin', url: '<url_details>']]) 
+            checkout scmGit(branches: [[name: "*/${BRANCH-NM}"]], extensions: [], userRemoteConfigs: [[credentialsId: 'git-cred', name: 'origin', url: 'https://github.com/kotagiriramachandra/DevOpsClassCodes.git']]) 
             echo "Git pull from ${BRANCH-NM}"
 }
 
