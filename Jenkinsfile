@@ -21,8 +21,8 @@ pipeline {
                 echo 'using git build scr functions'
                 script {
                     GV.buildApp()
-				            GV.compileApp()
-				            GV.pkgApp()
+		    GV.compileApp()
+		    GV.pkgApp()
                 }
             }
             post {
