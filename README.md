@@ -4,7 +4,7 @@ This tutorial teaches you some of the basic concepts in [Vaadin Framework](https
 a fast read for learning how to get started -ddd not an example on =sasdasdasdasd
  akshat  second edit
 Running the example from the command line
--------------------
+------------------------
 ```
 $ mvn jetty:run
 ```
