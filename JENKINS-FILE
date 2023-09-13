@@ -1,0 +1,38 @@
+pipeline{
+    agent any 
+    stages{
+        stage("coode checkout from github"){
+            steps{
+                git url :"https://github.com/deepak8971/DevOpsClassCodes.git"
+            }
+        }
+        stage("code compile"){
+            steps{
+                sh 'mvn compile'
+            }
+        }
+        stage("code test"){
+            steps{
+                sh 'mvn test'
+            }
+        }
+        stage("code qa by pmd"){
+            steps{
+                sh 'mvn pmd:pmd'
+                recordIssues(tools: [pmdParser()])
+            }
+        }
+        stage("code qa by checkstyle"){
+            steps{
+                sh 'mvn checkstyle:checkstyle'
+                recordIssues(tools: [pmdParser()])
+            }
+        }
+        stage("code package"){
+            steps{
+                sh 'mvn package'
+            }
+        }
+        
+    }
+}
