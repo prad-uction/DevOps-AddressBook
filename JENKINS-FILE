@@ -25,7 +25,7 @@ pipeline{
         stage("code qa by checkstyle"){
             steps{
                 sh 'mvn checkstyle:checkstyle'
-                recordIssues(tools: [pmdParser()])
+                recordIssues(tools: [checkStyle()])
             }
         }
         stage("code package"){
