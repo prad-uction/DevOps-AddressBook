@@ -1,0 +1,35 @@
+pipeline{
+    agent any
+    //tools{
+       // maven "test-maven"
+  //  }
+    stages{
+        stage("Fetch code from github repo qprofiles"){
+            steps{
+                git url: "https://github.com/akshu20791/DevOpsClassCodes"
+                echo 'first job done'
+            }
+        }
+        stage("compile by qprofiles"){
+            steps{
+                sh 'mvn compile'
+                recordIssues(tools: [pmdParser()])
+            }
+        }
+        stage("testing by qprofiles"){
+            steps{
+                sh 'mvn test'
+            }
+        }
+        stage("qa by qprofiles"){
+            steps{
+                sh 'mvn pmd:pmd'
+            }
+        }
+        stage("package by qprofiles"){
+            steps{
+                sh 'mvn package'
+            }
+        }
+    }
+}
