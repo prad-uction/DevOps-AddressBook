@@ -1,12 +1,12 @@
 pipeline{
     agent any
-    //tools{
-       // maven "test-maven"
-  //  }
+    tools{
+        maven "test-maven"
+    }
     stages{
         stage("Fetch code from github repo qprofiles"){
             steps{
-                git url: "https://github.com/akshu20791/DevOpsClassCodes"
+                git url: "https://github.com/PrathibaShivakumar/DevOpsClassCodes"
                 echo 'first job done'
             }
         }
@@ -26,6 +26,13 @@ pipeline{
                 sh 'mvn pmd:pmd'
             }
         }
+        stage("package by qprofiles"){
+            steps{
+                sh 'mvn package'
+            }
+        }
+    }
+}
         stage("package by qprofiles"){
             steps{
                 sh 'mvn package'
