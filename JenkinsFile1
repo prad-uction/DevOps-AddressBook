@@ -1,7 +1,7 @@
 pipeline{
-	agent any
-	// tools{
-	// 	maven "test-maven"
+	//agent any
+	tools{
+	//maven "test-maven"
 	// }
       stages{
            stage('Checkout'){
