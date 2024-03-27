@@ -254,7 +254,7 @@
                     <!-- FINDBUGS -->
                     <plugin>
                         <artifactId>findbugs-maven-plugin</artifactId>
-                        <version>2.4.0</version>
+                        <version>3.8.4</version>
                         <configuration>
                             <effort>Max</effort>
                             <xmlOutput>true</xmlOutput>
